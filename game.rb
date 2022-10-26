@@ -13,9 +13,15 @@ class Game
     newturn()
   end
 
+  def player_stat
+    puts "player1 #{@player1.lives}/3 vs player2 #{@player2.lives}/3"
+
+  end
+
   def newturn
     @player1.new_question
     @player2.new_question
+    player_stat()
     if @player1.lives > 0 && @player2.lives > 0
       puts '---------NEW-TURN---------'
       newturn()
