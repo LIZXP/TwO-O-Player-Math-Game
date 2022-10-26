@@ -18,10 +18,19 @@ class Game
 
   end
 
+  def check_winner
+    if  @player1.lives === 0
+      puts "#{@player2.name} is winner!"
+    elsif @player2.lives === 0
+      puts "#{@player1.name} is winner!"
+    end
+  end
+
   def newturn
     @player1.new_question
     @player2.new_question
     player_stat()
+    check_winner()
     if @player1.lives > 0 && @player2.lives > 0
       puts '---------NEW-TURN---------'
       newturn()
